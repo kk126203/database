@@ -1,0 +1,126 @@
+
+<!doctype html>
+<html class="no-js" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Movie | Search</title>
+<link rel="stylesheet" href="http://dhbhdrzi4tiry.cloudfront.net/cdn/sites/foundation.min.css">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/search_bar.css') }}">
+
+
+</head>
+<body>
+<div class="top-bar">
+	<div class="top-bar-right">
+		{% if status %}
+		<a href="/profile">
+			<form action="/profile" method="post">
+				<input type="submit" name="username" value="{{name}}">
+			</form>
+		</a>
+		{% else %}
+		<a href="/signin">Login</a>
+		{% endif %}
+	</div>
+</div>
+
+
+<div class="callout large">
+	<div class="row column text-center">
+		<h1>Which movie do you want to know ?</h1>
+		<p class="lead">More Movies, More Details</p>
+	</div>
+</div>
+
+<div class="row">
+	<div class="flexsearch">
+		<div class="flexsearch--wrapper">
+			<form class="flexsearch--form" action="/Search" method="post">
+				<div class="flexsearch--input-wrapper">
+					<input class="flexsearch--input" type="search" name="Mname" placeholder="which movie do you want to know?">
+				</div>
+				<input class="flexsearch--submit" type="submit" value="&#10140;"/>
+			</form>
+		</div>
+	</div>
+</div>
+
+<hr>
+<div class="row column">
+	<ul class="vertical medium-horizontal menu expanded text-center">
+		<li>
+			<a href="/theatre">
+				<form action="/theatre" method="post">
+					<div class="stat">Theatre</div>
+				</form>
+			</a>
+		</li>
+		<li>
+			<a href="/star">
+				<form action="/star" method="post">
+					<div class="stat">Stars</div>
+				</form>
+			</a>
+		</li>
+		<li>
+			<a href="/director">
+				<form action="/director" method="post">
+					<div class="stat">Directors</div>
+				</form>
+			</a>
+		<li>
+			<a href="/writer">
+				<form action="/writer" method="post">
+					<div class="stat">Writers</div>
+				</form>
+			</a>
+		</li>
+	</ul>
+</div>
+<hr>
+<div class="row column">
+	<h3> <div>{{recommand}}</div></h3>
+</div>
+<div class="row medium-up-3 large-up-4">
+	<div class="column">
+		<img class="thumbnail" src="http://t3.gstatic.com/images?q=tbn:ANd9GcQs5vPjzQ1GGkUi1HTW970HfTpdrhyZu13PPRua_pjKSqoGSSzg">
+	</div>
+	<div class="column">
+		<img class="thumbnail" src="http://t1.gstatic.com/images?q=tbn:ANd9GcTg-1BVyi_jS3YH7Hu2AhjwTtWde823qHWJlH2d3yN7vknhA3yb">
+	</div>
+	<div class="column">
+		<img class="thumbnail" src="http://t0.gstatic.com/images?q=tbn:ANd9GcTU6jaqA5dE6OTyZ2JCffqAlnsEQqKHyg8fgiB4lu-8eCRa0UPK">
+	</div>
+	<div class="column">
+		<img class="thumbnail" src="http://t0.gstatic.com/images?q=tbn:ANd9GcT1URD_eUNOMonO8kDFaY2BHk-vevJnCe42d6BoYRtpJPq0p-hP">
+	</div>
+</div>
+<hr>
+<div class="row column">
+	<ul class="vertical medium-horizontal menu expanded text-center">
+		<h5>Do you know?</h5>
+		<li>
+			<a href="/query1">
+				<form action="/query1" method="post">
+					<p>Find the names of the boxoffice-guaranteed actors. A boxofficeguaranteed actor is an actor who has stared in a movie that has a box office higher than the average box office of all movies.</p>
+				</form>
+			</a>
+		</li>
+		<li>
+			<a href="/query2">
+				<form action="/query2" method="post">
+					<p>Find the name and address of the theatres that start to play 'Forrest Gump' and 'Lucy' on the same day so that Lily can hitch a ride.</p>
+				</form>
+			</a>
+		</li>
+		<li>
+			<a href="/query3">
+				<form action="/query3" method="post">
+					<p>Find academy award writers. Find the name and nationality of the writers who have wrote at least 1 movie that received a number of awards higher than the average number of awards confered to all movies.</p>
+				</form>
+			</a>
+	</ul>
+</div>
+</body>
+</html>

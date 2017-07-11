@@ -1,0 +1,71 @@
+
+<!doctype html>
+<html class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title> Result | Search </title>
+    <link rel="stylesheet" href="http://dhbhdrzi4tiry.cloudfront.net/cdn/sites/foundation.min.css">
+    <style type="text/css">
+        table {
+  color: #333;
+  font-family: sans-serif;
+  font-size: .9em;
+  font-weight: 300;
+  text-align: left;
+  line-height: 40px;
+  border-spacing: 0;
+  border: 2px solid #0095cd;
+  width: 500px;
+  margin: 50px auto;
+}
+
+thead tr:first-child {
+  background: #0095cd;
+  color: #fff;
+  border: none;
+}
+
+#t_title{
+  position: center;
+}
+    </style>
+  </head>
+  <body>
+ 
+  <div class="callout large">
+    <div class="row column text-center">
+      <h1>Which movie do you want to know ?</h1>
+      <p class="lead">More Movies, More Details</p>
+      <a href="/" class="button large">RETURN</a>
+    </div>
+  </div>
+  <hr>
+  <div class="row column">
+    <div>
+      <table>
+        <thead>
+          <tr>
+           <th id = "t_title" colspan="4">    Detailed Information       </th>
+          </tr>
+          <tr> {% for n in t %}
+                  <th >{{n}}</th>
+                {% endfor %} 
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+                {% for item in data %}
+                  {% for n in item %}
+                      <td >{{n}}</td>
+                  {% endfor %}
+                {% endfor %}
+          </tr>
+        </tbody>
+      </table>
+        <hr>
+    </div>
+  </div>
+  <hr>
+  </body>
+</html>

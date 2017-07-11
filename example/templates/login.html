@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}" />
+		<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/animate-custom.css') }}"/>
+        <link rel="stylesheet" href="http://dhbhdrzi4tiry.cloudfront.net/cdn/sites/foundation.min.css">
+    </head>
+    <body>
+        <div class="top-bar">
+            <div class="top-bar-right">
+                <li>
+                    <a href="/">Return</a>
+                </li>
+            </div>
+        </div>
+        <div class="callout large">
+            <div class="row column text-center">
+                <h1>User Log In</h1>
+            </div>
+        </div>
+        <a class="hiddenanchor" id="toregister"></a>
+        <a class="hiddenanchor" id="tologin"></a>
+        <div id="wrapper">
+            <div id="login" class="animate form">
+                            <form method="POST" action="/login">
+                                <p>User ID</p>
+                                <p> {{error}} </p> 
+                                <input type="text" name="id"> 
+                                <p>Password</p>
+                                <input type="text" name="password"> 
+                                <p></p>
+                                <input class = "submit_button" type="submit" value="Sign In">                                
+                            </form>
+                            <p class="change_link"> 
+                                <a href="#toregister" class="to_register">Not a member yet ?</a>
+							</p>
+             </div>
+
+            <div id="register" class="animate form">
+                            <form method="POST" action="/register">
+                                <p>User ID</p>
+                                <input type="text" name="id"> 
+                                <p>Password</p>
+                                <input type="text" name="password"> 
+                                <p>How would you rate the following movie genres?</p>
+                                <p>comedy</p>
+                                <input type="text" name="comedy"> 
+                                <p>action</p>
+                                <input type="text" name="action"> 
+                                <p>drama</p>
+                                <input type="text" name="drama"> 
+                                <p></p>
+                                <input class = "submit_button" type="submit" value="Sign Up">
+                            </form>
+                            <p class="change_link">  
+                                <a href="#tologin" class="to_register"> Go and log in </a>
+                            </p>
+            </div>
+        </div>
+    </body>
+</html>
